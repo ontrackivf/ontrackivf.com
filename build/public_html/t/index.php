@@ -15,15 +15,14 @@ $db2use = array(
 
 
 /* PAGE VARIABLES */
-$r = null;
-$v = null;
-$s = null;
-
-// get the referrer-valueprop-survey string
-$rvs = (isset($_GET['rvs'])) ? $_GET['rvs'] : FALSE;
-
-
 do{
+
+    $r = null;
+    $v = null;
+    $s = null;
+
+    // get the referrer-valueprop-survey string
+    $rvs = (isset($_GET['rvs'])) ? $_GET['rvs'] : FALSE;
 
     // set referrer, value prop, survey if page directly accessed
     if($rvs === FALSE){
@@ -98,6 +97,19 @@ do{
     $s = $ids['s'];
 
 }while(false);
+
+
+// upload data and display value prop
+try{
+
+    // check to make sure the value prop is there
+    
+
+}catch(mysqli_sql_exception $e){
+
+}catch(Exception $e){
+
+}
 
 
 
