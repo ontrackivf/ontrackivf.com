@@ -1,0 +1,11 @@
+# Fix Rewrite
+Options -Multiviews
+
+# turn on rewrites
+RewriteEngine on
+
+# set the rewrite base directory
+RewriteBase /t/
+
+# get all characters after the slash and pass them to the script
+RewriteRule ^([A-Za-z0-9/]+)$ index.php?rvs=$1 [L]
