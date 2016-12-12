@@ -1,0 +1,8 @@
+html{
+	background-color:$ontrack_purple;
+	color:white;
+}
+
+.holder{
+	@include outer-container;
+}
