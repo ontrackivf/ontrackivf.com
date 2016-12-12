@@ -139,7 +139,7 @@ try{
         // get the id of the new user session in order to use for tracking further clicks
         $user_id = $db_main->insert_id;
     }else{
-        $user_id = NULL;
+        $user_id = FALSE;
     }
 
 
