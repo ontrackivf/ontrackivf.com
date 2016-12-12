@@ -89,6 +89,12 @@
 		"oAP": "\/build\/public_html\/exclude\/test\/index.php",
 		"oF": 0
 		},
+	"\/build\/public_html\/index.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/public_html\/index.php",
+		"oF": 0
+		},
 	"\/build\/public_html\/js\/webtests-min.js": {
 		"ft": 64,
 		"mi": 1,
