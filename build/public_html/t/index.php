@@ -17,6 +17,13 @@ $db2use = array(
 /* PAGE VARIABLES */
 do{
 
+    // check to see if the user is an employee and should be excluded
+    if(isset($_COOKIE['ontrack_webtest_exclude']) && $_COOKIE['ontrack_webtest_exclude'] === 'exclude_me'){
+        $exclude = TRUE;
+    }else{
+        $exclude = FALSE;
+    }
+
     $now = time();
 
     $r = null;
@@ -114,22 +121,26 @@ do{
 
 try{
 
-    // upload tracking info
-    $stmt = $db_main->prepare("INSERT INTO webtests(referrer, value_prop, survey, entertime, url, ipaddress, browser, http_referrer) VALUES(?,?,?,?,?,?,?,?)");
-    $stmt->bind_param("iiiissss",
-        $r,     /* referrer */
-        $v,     /* value prop */
-        $s,     /* survey */
-        $now,   /* enter time */
-        $rvs,   /* url string */
-        $_SERVER['REMOTE_ADDR'],    /* ip address */
-        $_SERVER['HTTP_USER_AGENT'],/* browser */
-        $_SERVER['HTTP_REFERER']    /* browser reported referrer */
-    );
-    $stmt->execute();
+    if($exclude === FALSE){
+        // upload tracking info
+        $stmt = $db_main->prepare("INSERT INTO webtests(referrer, value_prop, survey, entertime, url, ipaddress, browser, http_referrer) VALUES(?,?,?,?,?,?,?,?)");
+        $stmt->bind_param("iiiissss",
+            $r,     /* referrer */
+            $v,     /* value prop */
+            $s,     /* survey */
+            $now,   /* enter time */
+            $rvs,   /* url string */
+            $_SERVER['REMOTE_ADDR'],    /* ip address */
+            $_SERVER['HTTP_USER_AGENT'],/* browser */
+            $_SERVER['HTTP_REFERER']    /* browser reported referrer */
+        );
+        $stmt->execute();
 
-    // get the id of the new user session in order to use for tracking further clicks
-    $user_id = $db_main->insert_id;
+        // get the id of the new user session in order to use for tracking further clicks
+        $user_id = $db_main->insert_id;
+    }else{
+        $user_id = NULL;
+    }
 
 
 
