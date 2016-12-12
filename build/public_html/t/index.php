@@ -110,7 +110,7 @@ do{
 }while(false);
 
 
-/* HEADER */ require('layout/header1.php')
+/* HEADER */ require('layout/header1.php');
 
 try{
 
@@ -155,7 +155,7 @@ try{
 }
 
 
-/* FOOTER */ require('layout/footer1.php')
+/* FOOTER */ require('layout/footer1.php');
 
 /* CLOSE OPEN DATABASES */
 foreach ($db2use as $db => $used) {
