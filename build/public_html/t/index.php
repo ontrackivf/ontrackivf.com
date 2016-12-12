@@ -17,6 +17,8 @@ $db2use = array(
 /* PAGE VARIABLES */
 do{
 
+    $now = time();
+
     $r = null;
     $v = null;
     $s = null;
@@ -56,8 +58,8 @@ do{
         break;
     }
 
-    // check to see if values are formatted correctly
 
+    // check to see if values are formatted correctly
     // make new array with first character the key and the rest the value
     $ids = array();
     foreach( $a_rvs as $value ){
@@ -96,14 +98,55 @@ do{
     $v = $ids['v'];
     $s = $ids['s'];
 
+    // check to make sure the value prop is there
+    if(!file_exists('value_props/'.$v.'.php')){
+        // value prop doesn't exist, set as error
+        $r = '0';
+        $v = '1';
+        $s = '1';
+        break;
+    }
+
 }while(false);
 
 
-// upload data and display value prop
+/* HEADER */ require('layout/header1.php')
+
 try{
 
-    // check to make sure the value prop is there
-    
+    // upload tracking info
+    $stmt = $db_main->prepare("INSERT INTO webtests(referrer, value_prop, survey, entertime, url, ipaddress, browser, http_referrer) VALUES(?,?,?,?,?,?,?,?)");
+    $stmt->bind_param("iiiissss",
+        $r,     /* referrer */
+        $v,     /* value prop */
+        $s,     /* survey */
+        $now,   /* enter time */
+        $rvs,   /* url string */
+        $_SERVER['REMOTE_ADDR'],    /* ip address */
+        $_SERVER['HTTP_USER_AGENT'],/* browser */
+        $_SERVER['HTTP_REFERER']    /* browser reported referrer */
+    );
+    $stmt->execute();
+
+    // get the id of the new user session in order to use for tracking further clicks
+    $user_id = $db_main->insert_id;
+
+
+
+    // double check to see that the value prop exists
+    if(!file_exists('value_props/'.$v.'.php')){
+        /*  this should never happen
+            it will only happen if the default value prop (1.php)
+            is deleted from the server
+        */
+        throw new Exception('missing vp');
+    }
+
+
+    // display the value prop
+    include 'value_props/'.$v.'.php';
+
+
 
 }catch(mysqli_sql_exception $e){
 
@@ -112,7 +155,7 @@ try{
 }
 
 
-
+/* FOOTER */ require('layout/footer1.php')
 
 /* CLOSE OPEN DATABASES */
 foreach ($db2use as $db => $used) {
