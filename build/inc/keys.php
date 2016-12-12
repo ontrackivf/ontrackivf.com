@@ -2,7 +2,8 @@
 
 /* SITE CONFIGURATION */
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);			// Use Exceptions for MySqli queries.
-set_include_path('/home/ontracki/inc/');							// Do not include trailing slash.
+set_include_path('/home/ontracki/inc');								// Do not include trailing slash.
+define('HOME_PATH', '/home/ontracki/');								// for file exist checks, include trailing slash
 date_default_timezone_set('America/Detroit');						// Set the site's time zone.
 define('COOKIE_DOMAIN', '.ontrackivf.com');							// Set the login cookie domain, do not forget the preceding dot.
 $site = 'ontrackivf.com';											// Do not include trailing slash. Do not include protocol.

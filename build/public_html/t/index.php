@@ -106,7 +106,7 @@ do{
     $s = $ids['s'];
 
     // check to make sure the value prop is there
-    if(!file_exists('value_props/'.$v.'.php')){
+    if(!file_exists(HOME_PATH.'inc/value_props/'.$v.'.php')){
         // value prop doesn't exist, set as error
         $r = '0';
         $v = '1';
@@ -145,7 +145,7 @@ try{
 
 
     // double check to see that the value prop exists
-    if(!file_exists('value_props/'.$v.'.php')){
+    if(!file_exists(HOME_PATH.'inc/value_props/'.$v.'.php')){
         /*  this should never happen
             it will only happen if the default value prop (1.php)
             is deleted from the server
@@ -160,8 +160,12 @@ try{
 
 
 }catch(mysqli_sql_exception $e){
+    // content in case there is an error uploading data
+    echo 'data error';
 
 }catch(Exception $e){
+    // default content in case default value prop is missing or other error
+    echo 'value prop 1 missing?';
 
 }
 
