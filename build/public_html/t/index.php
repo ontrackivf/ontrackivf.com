@@ -116,6 +116,7 @@ do{
 
 }while(false);
 
+ob_end_flush();
 
 /* HEADER */ require('layout/header1.php');
 
