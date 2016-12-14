@@ -4,8 +4,8 @@
 	</div>
 	<div class="holder">
 		<div class="text-content top_padded">
-			<h2 class="tagline">Why wonder? Know what to expect. Know you're OnTrack.</h2>
-			<p>Without OnTrack, 15 out of 100 people will make a scheduling or medication mistake during their IVF treatment. OnTrack puts you back in control and let's you know you're doing everything right.</p>
+			<h2 class="tagline">Why wonder? Know what to expect. Know you're OnTrack™.</h2>
+			<p>Without OnTrack™, 15 out of 100 people will make a scheduling or medication mistake during their IVF treatment. OnTrack™ puts you back in control and let's you know you're doing everything right.</p>
 			<div class="button" onclick="showModal('email_modal')">Learn More</div>
 		</div>
 		<div class="image-content">
@@ -22,7 +22,7 @@
 			<ul class="features">
 				<li>
 					<img src="/img/multi_platform.png">
-					<p>OnTrack is a cloud-based web application for helping women engaged in fertility treatment manage their treatment better.</p>
+					<p>OnTrack™ is a cloud-based web application for helping women engaged in fertility treatment manage their treatment better.</p>
 				</li>
 				<li>
 					<img src="/img/med_management.png">
@@ -30,7 +30,7 @@
 				</li>
 				<li>
 					<img src="/img/checklist.png">
-					<p>OnTrack is your personal guide through the IVF treatment process.</p>
+					<p>OnTrack™ is your personal guide through the IVF treatment process.</p>
 				</li>
 			</ul>
 		</div>
@@ -38,7 +38,7 @@
 </div>
 <div class="background_container foot_back">
 	<div class="holder bottom_call_to_action">
-		<h2 class="tagline">Why wonder? Know what to expect. Know you're OnTrack.</h2>
+		<h2 class="tagline">Why wonder? Know what to expect. Know you're OnTrack™.</h2>
 		<div class="button center" onclick="showModal('email_modal')">Learn More</div>
 	</div>
 </div>
