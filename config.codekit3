@@ -121,14 +121,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/build\/public_html\/img\/iphone_tilted.png": {
-		"ft": 32768,
-		"iS": 974012,
-		"oA": 0,
-		"oAP": "\/build\/public_html\/img\/iphone_tilted.png",
-		"oF": 0,
-		"opt": 0
-		},
 	"\/build\/public_html\/img\/logo_white.png": {
 		"ft": 32768,
 		"iS": 23072,
@@ -158,6 +150,14 @@
 		"iS": 4518,
 		"oA": 0,
 		"oAP": "\/build\/public_html\/img\/multi_platform.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/build\/public_html\/img\/tilted_iphone.png": {
+		"ft": 32768,
+		"iS": 952849,
+		"oA": 0,
+		"oAP": "\/build\/public_html\/img\/tilted_iphone.png",
 		"oF": 0,
 		"opt": 0
 		},
