@@ -38,7 +38,7 @@ $phnx_load_img_height:		64px;
 	top:10px;
 	right:10px;
 	text-align:right;
-    color:black;
+    color:$not_black;
 }
 
 /* MODAL */
@@ -105,12 +105,12 @@ $phnx_load_img_height:		64px;
 	z-index: 9004;
 	padding:10px;
 	border-radius:3px;
-	background-color:white;
+	background-color:$not_white;
 	background-repeat:no-repeat;
 	background-position:center top;
 	box-shadow: 0 10px 15px -5px black;
 	h1{
-		color:black;
+		color:$not_black;
 		font-size:32px;
 		line-height:32px;
 		min-height:32px;
@@ -121,7 +121,7 @@ $phnx_load_img_height:		64px;
         font-weight:100;
 	}
 	p{
-        color:black;
+        color:$not_black;
 		line-height: 1.3em;
 		font-size: 1em;
 		margin-bottom: 1em;
