@@ -113,6 +113,14 @@
 		"oAP": "\/build\/public_html\/fonts\/FontAwesome.otf",
 		"oF": 0
 		},
+	"\/build\/public_html\/img\/iphone_tilted.png": {
+		"ft": 32768,
+		"iS": 974012,
+		"oA": 0,
+		"oAP": "\/build\/public_html\/img\/iphone_tilted.png",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/build\/public_html\/img\/logo_white.png": {
 		"ft": 32768,
 		"iS": 23072,
@@ -123,7 +131,7 @@
 		},
 	"\/build\/public_html\/img\/macbook_iphone.png": {
 		"ft": 32768,
-		"iS": 244262,
+		"iS": 244909,
 		"oA": 0,
 		"oAP": "\/build\/public_html\/img\/macbook_iphone.png",
 		"oF": 0,
@@ -248,7 +256,7 @@
 		},
 	"\/sass\/_tests.scss": {
 		"aP": 0,
-		"bl": 0,
+		"bl": 1,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
@@ -1328,7 +1336,7 @@
 	"\/scripts\/jquery-1.11.1.min.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/build\/public_html\/js\/jquery-1.11.1.min.js",
 		"oF": 0,
 		"sC": 1,
@@ -1349,7 +1357,7 @@
 		"oA": 0,
 		"oAP": "\/build\/public_html\/js\/webtests.js",
 		"oF": 0,
-		"sC": 3,
+		"sC": 1,
 		"tS": 0
 		}
 	},
