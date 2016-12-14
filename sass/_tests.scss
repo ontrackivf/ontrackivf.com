@@ -8,9 +8,9 @@ html{
 	color:white;
 	font-family: $font_main;
 }
-
-body{
-	padding:0 20px;
+.background_container{
+	width:100%;
+	padding:2em 20px 6em 20px;
 	width:100%;
 	margin:0;
 	@include media($tablet){
@@ -23,11 +23,14 @@ body{
 .holder{
 	@include outer-container;
 }
+.light_back{
+	background-color:$not_white;
+	width:100%;
+}
 
 .logo{
 	@include span-columns(2);
 	margin-bottom:3em;
-	margin-top:2em;
 	@include media($tablet){
 		width:120px;
 	}
