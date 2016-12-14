@@ -15,7 +15,9 @@
 </div>
 <div class="background_container light_back">
 	<div class="holder">
-		<br><br><br><br><br><br><br><br><br><br><br><br>
+		<div class="image-content left">
+			<img src="/img/tilted_iphone.png">
+		</div>
 	</div>
 </div>
 

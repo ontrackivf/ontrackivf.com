@@ -96,6 +96,12 @@ html{
 	@include media($tablet){
 		@include span-columns (8);
 	}
+	&.left{
+		@include span-columns (4);
+		@include media($tablet){
+			@include span-columns (8);
+		}
+	}
 }
 
 
