@@ -7,7 +7,7 @@
 		"uuidString": "FA9288B3-6A0A-4F5A-8349-D419CF9FDDC7"
 		}
 	],
-"creatorBuild": "25444",
+"creatorBuild": "25479",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -79,6 +79,40 @@
 		"oAP": "\/build\/public_html\/exclude\/test\/index.php",
 		"oF": 0
 		},
+	"\/build\/public_html\/fonts\/fontawesome-webfont.eot": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/public_html\/fonts\/fontawesome-webfont.eot",
+		"oF": 0
+		},
+	"\/build\/public_html\/fonts\/fontawesome-webfont.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/build\/public_html\/fonts\/fontawesome-webfont.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/build\/public_html\/fonts\/fontawesome-webfont.ttf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/public_html\/fonts\/fontawesome-webfont.ttf",
+		"oF": 0
+		},
+	"\/build\/public_html\/fonts\/fontawesome-webfont.woff": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/public_html\/fonts\/fontawesome-webfont.woff",
+		"oF": 0
+		},
+	"\/build\/public_html\/fonts\/FontAwesome.otf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/public_html\/fonts\/FontAwesome.otf",
+		"oF": 0
+		},
 	"\/build\/public_html\/img\/logo_white.png": {
 		"ft": 32768,
 		"iS": 23072,
@@ -101,11 +135,11 @@
 		"oAP": "\/build\/public_html\/index.php",
 		"oF": 0
 		},
-	"\/build\/public_html\/js\/webtests-min.js": {
+	"\/build\/public_html\/js\/phnx-modal.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/public_html\/js\/webtests-min-min.js",
+		"oAP": "\/build\/public_html\/js\/phnx-modal.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -114,7 +148,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/public_html\/js\/webtests-min.js",
+		"oAP": "\/build\/public_html\/js\/webtests.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -182,6 +216,19 @@
 		"ma": 1,
 		"oA": 1,
 		"oAP": "\/build\/public_html\/css\/_colors.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/sass\/_modal.scss": {
+		"aP": 0,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/css\/_modal.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -810,6 +857,175 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"\/sass\/font-awesome\/_bordered-pulled.scss": {
+		"aP": 0,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/css\/_bordered-pulled.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/sass\/font-awesome\/_core.scss": {
+		"aP": 0,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/css\/_core.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/sass\/font-awesome\/_fixed-width.scss": {
+		"aP": 0,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/css\/_fixed-width.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/sass\/font-awesome\/_font-awesome.scss": {
+		"aP": 0,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/css\/_font-awesome.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/sass\/font-awesome\/_icons.scss": {
+		"aP": 0,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/css\/_icons.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/sass\/font-awesome\/_larger.scss": {
+		"aP": 0,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/css\/_larger.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/sass\/font-awesome\/_list.scss": {
+		"aP": 0,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/css\/_list.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/sass\/font-awesome\/_mixins.scss": {
+		"aP": 0,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/css\/_mixins.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/sass\/font-awesome\/_path.scss": {
+		"aP": 0,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/css\/_path.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/sass\/font-awesome\/_rotated-flipped.scss": {
+		"aP": 0,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/css\/_rotated-flipped.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/sass\/font-awesome\/_spinning.scss": {
+		"aP": 0,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/css\/_spinning.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/sass\/font-awesome\/_stacked.scss": {
+		"aP": 0,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/css\/_stacked.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/sass\/font-awesome\/_variables.scss": {
+		"aP": 0,
+		"bl": 1,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/css\/_variables.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
 	"\/sass\/neat\/_neat-helpers.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1109,13 +1325,31 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"\/scripts\/jquery-1.11.1.min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/build\/public_html\/js\/jquery-1.11.1.min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/scripts\/modal.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/build\/public_html\/js\/modal.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/scripts\/webtests.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/public_html\/js\/webtests-min.js",
+		"oAP": "\/build\/public_html\/js\/webtests.js",
 		"oF": 0,
-		"sC": 1,
+		"sC": 3,
 		"tS": 0
 		}
 	},
@@ -1571,6 +1805,10 @@
 			"active": 0,
 			"optionString": "{'properties': 'always'}"
 			},
+		"capitalized-comments": {
+			"active": 0,
+			"optionString": "'always', {'ignoreInlineComments': false, 'ignoreConsecutiveComments': false}"
+			},
 		"class-methods-use-this": {
 			"active": 0,
 			"optionString": "{'exceptMethods': []}"
@@ -1734,6 +1972,10 @@
 		"max-statements": {
 			"active": 0,
 			"optionString": "{'max': 10}, {'ignoreTopLevelFunctions': true}"
+			},
+		"max-statements-per-line": {
+			"active": 0,
+			"optionString": "{'max': 1}"
 			},
 		"multiline-ternary": {
 			"active": 0,
@@ -2099,6 +2341,10 @@
 			"active": 0,
 			"optionString": "'except-parens'"
 			},
+		"no-return-await": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-script-url": {
 			"active": 0,
 			"optionString": ""
@@ -2330,6 +2576,10 @@
 		"radix": {
 			"active": 0,
 			"optionString": "'always'"
+			},
+		"require-await": {
+			"active": 0,
+			"optionString": ""
 			},
 		"require-jsdoc": {
 			"active": 0,
@@ -2846,7 +3096,7 @@
 		},
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
-		"autoOutputPathFilenamePattern": "*-min.js",
+		"autoOutputPathFilenamePattern": "*.js",
 		"autoOutputPathRelativePath": "\/build\/public_html\/js",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
@@ -3163,6 +3413,10 @@
 			},
 		"space-colon": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"support-ie8": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"toplevel": {

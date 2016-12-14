@@ -4,9 +4,11 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
+@import "font-awesome/font-awesome";
+
 
 $font_main: 'Source Sans Pro', 'Arial', sans-serif;
 $font_headline: 'Montserrat', 'Arial', sans-serif;
 
-
+@import "modal";
 @import "tests";
