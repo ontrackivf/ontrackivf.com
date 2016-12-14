@@ -32,12 +32,19 @@
 					<img src="/img/checklist.png">
 					<p>OnTrack is your personal guide through the IVF treatment process.</p>
 				</li>
-				<li>
-					<i class="fa fa-bar-chart fa-5x" aria-hidden="true"></i>
-					<p> 15 to zero</p>
-				</li>
 			</ul>
-		<div>
+		</div>
+	</div>
+</div>
+<div class="background_container foot_back">
+	<div class="holder bottom_call_to_action">
+		<h2 class="tagline">Why wonder? Know what to expect. Know you're OnTrack.</h2>
+		<div class="button center" onclick="showModal('email_modal')">Learn More</div>
+	</div>
+</div>
+<div class="background_container black_back foot_back">
+	<div class="footer">
+		<p>&copy; OnTrack LLC, 2016</p>
 	</div>
 </div>
 
