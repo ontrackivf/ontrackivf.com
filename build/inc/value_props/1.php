@@ -3,8 +3,8 @@
 </div>
 <div class="holder">
 	<div class="text-content">
-		<h2 class="tagline">Fertility Treatment Doesn't Come With a Map</h2>
-		<p>OnTrack™ helps you manage your fertility medication by telling you when you need to take it, how many you have left, dosage changes, and when you need to refill them.</p>
+		<h2 class="tagline">know what to expect, know you're doing everything right</h2>
+		<p>OnTrack helps you know what to expect. Etc.</p>
 		<div class="button">Learn More</div>
 	</div>
 	<div class="image-content">

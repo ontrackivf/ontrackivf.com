@@ -137,10 +137,10 @@
 		"oAP": "\/build\/public_html\/t\/index.php",
 		"oF": 0
 		},
-	"\/build\/public_html\/t\/~ajax\/action\/index.php": {
+	"\/build\/public_html\/t\/~actions\/default\/index.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/public_html\/t\/~ajax\/action\/index.php",
+		"oAP": "\/build\/public_html\/t\/~actions\/default\/index.php",
 		"oF": 0
 		},
 	"\/inc\/keys-stev.php": {
