@@ -26,6 +26,7 @@ html{
 .light_back{
 	background-color:$not_white;
 	width:100%;
+	color: $not_black;
 }
 
 .logo{
@@ -39,15 +40,35 @@ html{
 	}
 }
 
+ul.features{
+	li{
+		@include span-columns(3 of 6);
+		@include omega(2n);
+		img{
+			width:100%;
+		}
+	}
+}
+
 
 .text-content{
-	@include span-columns (4);
-	padding-top:10%;
-	@include media($narrow){
-		padding-top: 5%;
+	&.top_padded{
+		padding-top:10%;
+		@include media($narrow){
+			padding-top: 5%;
+		}
 	}
+	@include span-columns (4);
+
 	@include media($tablet){
 		@include span-columns (8);
+	}
+	&.right{
+		@include span-columns (6);
+		@include media($tablet){
+			@include span-columns (8);
+		}
+		@include omega;
 	}
 	h2{
 		font-family: $font_headline;
@@ -97,7 +118,7 @@ html{
 		@include span-columns (8);
 	}
 	&.left{
-		@include span-columns (4);
+		@include span-columns (6);
 		@include media($tablet){
 			@include span-columns (8);
 		}

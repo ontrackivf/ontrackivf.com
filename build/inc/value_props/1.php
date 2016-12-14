@@ -3,7 +3,7 @@
 		<img class="logo" src="/img/logo_white.png">
 	</div>
 	<div class="holder">
-		<div class="text-content">
+		<div class="text-content top_padded">
 			<h2 class="tagline">Why wonder? Know what to expect. Know you're OnTrack.</h2>
 			<p>Without OnTrack, 15 out of 100 people will make a scheduling or medication mistake during their IVF treatment. OnTrack puts you back in control and let's you know you're doing everything right.</p>
 			<div class="button" onclick="showModal('email_modal')">Learn More</div>
@@ -18,6 +18,26 @@
 		<div class="image-content left">
 			<img src="/img/tilted_iphone.png">
 		</div>
+		<div class="text-content right">
+			<ul class="features">
+				<li>
+					<img src="/img/multi_platform.png">
+					<p>OnTrack is a cloud-based web application for helping women engaged in fertility treatment manage their treatment better.</p>
+				</li>
+				<li>
+					<img src="/img/med_management.png">
+					<p>It keeps track of your medication supply and tells you when you need to get more based on your pharmacy’s hours.</p>
+				</li>
+				<li>
+					<img src="/img/checklist.png">
+					<p>OnTrack is your personal guide through the IVF treatment process.</p>
+				</li>
+				<li>
+					<i class="fa fa-bar-chart fa-5x" aria-hidden="true"></i>
+					<p> 15 to zero</p>
+				</li>
+			</ul>
+		<div>
 	</div>
 </div>
 
