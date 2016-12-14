@@ -3,13 +3,16 @@
 </div>
 <div class="holder">
 	<div class="text-content">
-		<h2 class="tagline">know what to expect, know you're doing everything right</h2>
-		<p>OnTrack helps you know what to expect. Etc.</p>
+		<h2 class="tagline">Why wonder? Know what to expect. Know you're OnTrack.</h2>
+		<p>Without OnTrack, 15 out of 100 people will make a scheduling or medication mistake during their IVF treatment. OnTrack puts you back in control and let's you know you're doing everything right.</p>
 		<div class="button" onclick="showModal('email_modal')">Learn More</div>
 	</div>
 	<div class="image-content">
 		<img src="/img/macbook_iphone.png">
 	</div>
+</div>
+<div class="holder white">
+
 </div>
 
 

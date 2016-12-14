@@ -13,8 +13,6 @@ function hideModal(div) {
     document.getElementById('blackout').style.display = 'none';
     document.getElementById('blackout').style.backgroundColor = 'black';
 	document.getElementById(div).style.display = 'none';
-	document.getElementById('modal_content').innerHTML = '';
-    document.getElementById('modal_h1').innerHTML = '';
     $('body').removeClass('stop-scroll');
     document.openModal = '';
 }
