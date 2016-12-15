@@ -3,8 +3,8 @@
 	$prices = array('$100', '$250');
 	$price = $prices[array_rand($prices)];
 
-	// surveys in the database?
-	$survey = 'about:blank';
+	// move surveys to an array in an include to be included in /t/index.php
+	$survey = 'https://goo.gl/forms/LtkEdqPgBZNAvYIv2';
 ?>
 
 
@@ -94,43 +94,55 @@
 
 	// first button
 	$('#button1').click(function(){
-
 		// get the id from the php varible
 		var id = '<?php echo $user_id ?>';
-
 		// build the action data
 		var d1 = {
 			'button'	: '1',
 			'price'		: '<?php echo $price; ?>'
 		};
-
 		//send it, with calback to open the modal
 		sendAction(id, d1, showModal('email_modal') );
-
 	});
 
 	// second button
 	$('#button2').click(function(){
-
 		// get the id from the php varible
 		var id = '<?php echo $user_id ?>';
-
 		// build the action data
 		var d1 = {
 			'button'	: '2',
 			'price'		: '<?php echo $price; ?>'
 		};
-
 		//send it, with calback to open the modal
 		sendAction(id, d1, showModal('email_modal') );
-
 	});
 
 
 
-	// email address function
-	function sendEmail(){
-		alert('this is the script that send the email and forwards to the survey');
+	// email address save function
+	function sendEmail(id, d1){
+		// ajax send the action data
+		var ajx = $.get(
+			"/t/~actions/email1/",
+			{user_id:id, data1:d1 },
+			function( data ) {
+				if(data.error === 0){
+					window.location = '<?php echo $survey; ?>';
+				}else if(data.error === 2){
+					//change this (not alerts)
+					alert('you did not enter a vlid email address');
+				}else{
+					// this needs to change
+					alert('there was an error, please try again. [1]');
+				}
+			},
+			"json"
+		);
+		ajx.fail( function(){
+			// this needs to change
+			alert('there was an error, please try again. [2]');
+		});
 		document.getElementById('email_button').innerHTML = 'Submit';
 		document.getElementById('email_button').disabled = false;
 	};
@@ -147,6 +159,9 @@
 		// get the id from the php varible
 		var id = '<?php echo $user_id ?>';
 
+		// get email
+		var email = document.getElementById('email').value;
+
 		// get checkbox state
 		if(document.getElementById('even_better').checked){
 			var even_better = 'checked';
@@ -159,11 +174,9 @@
 			'even_better' : even_better
 		};
 
-		//send it, with calback to open the modal
-		sendAction(id, d1, sendEmail() );
-
-
-
+		//send it, with calback to save the email
+		sendAction(id, d1, sendEmail(id,email) );
 	});
+
 
 </script>
