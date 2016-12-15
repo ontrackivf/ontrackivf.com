@@ -2,8 +2,10 @@
 	// generate price
 	$prices = array('$100', '$250');
 	$price = $prices[array_rand($prices)];
-?>
 
+	// surveys in the database?
+	$survey = 'about:blank';
+?>
 
 
 
@@ -71,12 +73,12 @@
 				<p>We're currently developing the application. If you would like to know when it's ready, enter your email address and we'll let you know. <i class="fa fa-smile-o" aria-hidden="true"></i></p>
 				<p>We will not share your email with anyone.</p>
 				<fieldset id="email_form">
-					<input type="text" id="email">
+					<input type="text" id="email" placeholder="email address">
 					<button id="email_button">Submit</button>
 				</fieldset>
-				<div><input type="checkbox"> </div>
+				<p><input type="checkbox" id="even_better"> <label for="even_better">Even better - lock in your rate when OnTrack is available for $250 for your next IVF cycle.</label></p>
 				<div class="survey">
-					<p><a href="#">Also, will you help us out by answering a few additional questions?</a></p>
+					<p><a href="#">Will you help us out by answering a few additional questions?</a></p>
 					<p style="font-size:.7em;">No thanks</p>
 				</div>
 			</div>
@@ -89,53 +91,78 @@
 
 
 <script>
-	// action for this page
-	function sendAction(d1){
+
+
+	// first button
+	$('#button1').click(function(){
 
 		// get the id from the php varible
 		var id = '<?php echo $user_id ?>';
 
-		// ajax send the action data
-		var ajx = $.get(
-			"/t/~actions/default/",
-			{user_id:id, data1:d1 },
-			function( data ) {
-				if(data.error === 0){
-					showModal('email_modal');
-				}else{
-					// this needs to change
-					alert('there was an error, please try again. [1]');
-				}
-			},
-			"json"
-		);
-		ajx.fail( function(){
-			// this needs to change
-			alert('there was an error, please try again. [2]');
-		});
-	}
-
-	// first button
-	$('#button1').click(function(){
-		// check if button is checked
-
-		//data json
+		// build the action data
 		var d1 = {
 			'button'	: '1',
 			'price'		: '<?php echo $price; ?>'
 		};
-		sendAction(d1);
+
+		//send it, with calback to open the modal
+		sendAction(id, d1, showModal('email_modal') );
+
 	});
 
 	// second button
 	$('#button2').click(function(){
+
+		// get the id from the php varible
+		var id = '<?php echo $user_id ?>';
+
+		// build the action data
 		var d1 = {
 			'button'	: '2',
 			'price'		: '<?php echo $price; ?>'
 		};
-		sendAction(d1);
+
+		//send it, with calback to open the modal
+		sendAction(id, d1, showModal('email_modal') );
+
 	});
 
+
+
+	// email address function
+	function sendEmail(){
+		alert('this is the script that send the email and forwards to the survey');	
+	};
+
+
+
 	// email button script
-	
+	$('#email_button').click(function(){
+
+		// change the submit button to spinner
+		this.innerHTML = '<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>';
+		this.disabled = true;
+
+		// get the id from the php varible
+		var id = '<?php echo $user_id ?>';
+
+		// get checkbox state
+		if(document.getElementById('even_better').checked){
+			var even_better = 'checked';
+		}else{
+			var even_better = 'not checked';
+		}
+
+		// create the action data
+		var d1 = {
+			'even_better' : even_better
+		};
+
+		//send it, with calback to open the modal
+		sendAction(id, d1, sendEmail() );
+
+
+
+	});
+
 </script>

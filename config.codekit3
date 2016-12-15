@@ -113,6 +113,14 @@
 		"oAP": "\/build\/public_html\/fonts\/FontAwesome.otf",
 		"oF": 0
 		},
+	"\/build\/public_html\/img\/checklist.png": {
+		"ft": 32768,
+		"iS": 1615,
+		"oA": 0,
+		"oAP": "\/build\/public_html\/img\/checklist.png",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/build\/public_html\/img\/logo_white.png": {
 		"ft": 32768,
 		"iS": 23072,
@@ -126,6 +134,30 @@
 		"iS": 244909,
 		"oA": 0,
 		"oAP": "\/build\/public_html\/img\/macbook_iphone.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/build\/public_html\/img\/med_management.png": {
+		"ft": 32768,
+		"iS": 2882,
+		"oA": 0,
+		"oAP": "\/build\/public_html\/img\/med_management.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/build\/public_html\/img\/multi_platform.png": {
+		"ft": 32768,
+		"iS": 4169,
+		"oA": 0,
+		"oAP": "\/build\/public_html\/img\/multi_platform.png",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/build\/public_html\/img\/tilted_iphone.png": {
+		"ft": 32768,
+		"iS": 926157,
+		"oA": 0,
+		"oAP": "\/build\/public_html\/img\/tilted_iphone.png",
 		"oF": 0,
 		"opt": 0
 		},
