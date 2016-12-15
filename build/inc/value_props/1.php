@@ -66,9 +66,7 @@
 	<div class="modal-wrap">
 		<div class="modal">
 			<i id="modal_close" class="close fa fa-times" aria-hidden="true" onclick="hideModal('email_modal');"></i>
-
 			<div id="modal_content">
-				<div class="vision"><p>A world without the pain and uncertainty of infertility</p><span>Our Vision</span></div>
 				<h2>Thanks for wanting to learn more about OnTrack!</h2>
 				<p>We're currently developing the application. If you would like to know when it's ready, enter your email address and we'll let you know. <i class="fa fa-smile-o" aria-hidden="true"></i></p>
 				<p>We will not share your email with anyone.</p>
@@ -78,9 +76,10 @@
 				</fieldset>
 				<p><input type="checkbox" id="even_better"> <label for="even_better">Even better - lock in your rate when OnTrack is available for $250 for your next IVF cycle.</label></p>
 				<div class="survey">
-					<p><a href="#">Will you help us out by answering a few additional questions?</a></p>
-					<p style="font-size:.7em;">No thanks</p>
+					<p><a href="<?php echo $survey; ?>">Will you help us out by answering a few additional questions?</a></p>
+					<p style="font-size:.7em; cursor:pointer;" onclick="hideModal('email_modal')">No thanks</p>
 				</div>
+				<div class="vision"><p>&quot;A world without the pain and uncertainty of infertility.&quot;</p><span>Our Vision</span></div>
 			</div>
 		</div>
 	</div>
@@ -131,7 +130,9 @@
 
 	// email address function
 	function sendEmail(){
-		alert('this is the script that send the email and forwards to the survey');	
+		alert('this is the script that send the email and forwards to the survey');
+		document.getElementById('email_button').innerHTML = 'Submit';
+		document.getElementById('email_button').disabled = false;
 	};
 
 

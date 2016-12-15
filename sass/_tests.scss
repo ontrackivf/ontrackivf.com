@@ -176,25 +176,9 @@ ul.features{
 	@include outer-container;
 }
 
-.vision{
-	p{
-		font-size:1.3em;
-		font-style:italic;
-		text-align: center;
-		border-bottom:solid 1px #DDD;
-		padding-bottom: .25em;
-		margin-bottom: .25em;
-	}
-	span{
-		color:$not_black;
-		font-size: .6em;
-		text-align: center;
-		display:block;
-	}
-	margin-bottom:2em;
-}
 
-@include -phnx-modal(#email_modal, 600, 100){
+
+@include -phnx-modal(#email_modal, 600, 60){
 	padding:10%;
 	h2{
 		font-family: $font_headline;
@@ -224,6 +208,24 @@ ul.features{
 	.survey{
 		margin-top:2em;
 		text-align: center;
-		font-size:1.1em;
+		font-size:1.2em;
+	}
+	.vision{
+		margin-top:2em;
+		p{
+			font-size:1.3em;
+			text-align: center;
+			padding: 1em 15%;
+			margin-bottom: .25em;
+			background-color:white;
+			border-radius: 3px;
+		}
+		span{
+			color:$not_black;
+			font-size: .6em;
+			text-align: center;
+			display:block;
+			text-transform: uppercase;
+		}
 	}
 };
