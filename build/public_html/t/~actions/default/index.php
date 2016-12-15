@@ -56,6 +56,7 @@ try{
         $stmt = $db_main->prepare("UPDATE webtests SET `action_data`=? WHERE `id`=$user_id LIMIT 1");
         $stmt->bind_param("s", $action_data);
         $stmt->execute();
+        $stmt->close();
     }else{
         $user_id = FALSE;
     }
