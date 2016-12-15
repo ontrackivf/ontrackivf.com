@@ -34,7 +34,6 @@ try{
 	if(filter_var($data1, FILTER_VALIDATE_EMAIL)){
 		if($exclude === FALSE){
 
-
 			$email = $data1;
 
 			// upload tracking info

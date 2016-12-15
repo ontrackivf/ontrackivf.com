@@ -16,7 +16,7 @@
 	<div class="holder">
 		<div class="text-content top_padded">
 			<h2 class="tagline">Why wonder? Know what to expect. Know you're OnTrack™.</h2>
-			<p>Without OnTrack, 15 out of 100 people will make a scheduling or medication mistake during their IVF treatment. OnTrack puts you back in control and let's you know you're doing everything right.</p>
+			<p>Without OnTrack™, 15 out of 100 people will make a scheduling or medication mistake during their IVF treatment. The OnTrack™ service puts you back in control and let's you know you're doing everything right.</p>
 			<div class="button" id="button1">Learn More</div>
 		</div>
 		<div class="image-content">
@@ -37,7 +37,7 @@
 				</li>
 				<li>
 					<img src="/img/med_management.png">
-					<p>It keeps track of your medication supply and tells you when you need to get more based on your pharmacy’s hours.</p>
+					<p>OnTrack™ keeps track of your medication supply and tells you when you need to get more based on your pharmacy’s hours.</p>
 				</li>
 				<li>
 					<img src="/img/checklist.png">
