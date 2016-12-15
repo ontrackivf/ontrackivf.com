@@ -136,6 +136,7 @@ try{
             $_SERVER['HTTP_REFERER']    /* browser reported referrer */
         );
         $stmt->execute();
+        $stmt->close();
 
         // get the id of the new user session in order to use for tracking further clicks
         $user_id = $db_main->insert_id;
