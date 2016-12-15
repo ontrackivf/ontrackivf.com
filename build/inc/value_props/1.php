@@ -15,7 +15,7 @@
 	</div>
 	<div class="holder">
 		<div class="text-content top_padded">
-			<h2 class="tagline">Why wonder? Know what to expect. Know you're OnTrack™.</h2>
+			<h2 class="tagline">Why wonder during IVF? Know what to expect. Know you're OnTrack™.</h2>
 			<p>Without OnTrack™, 15 out of 100 people will make a scheduling or medication mistake during their IVF treatment. The OnTrack™ service puts you back in control and let's you know you're doing everything right.</p>
 			<div class="button" id="button1">Learn More</div>
 		</div>
@@ -49,7 +49,7 @@
 </div>
 <div class="background_container foot_back">
 	<div class="holder bottom_call_to_action">
-		<h2 class="tagline">Why wonder? Know what to expect. Know you're OnTrack™.</h2>
+		<h2 class="tagline">Why wonder during IVF? Know what to expect. Know you're OnTrack™.</h2>
 		<div class="button center" id="button2">Learn More</div>
 	</div>
 </div>
@@ -67,14 +67,14 @@
 		<div class="modal">
 			<i id="modal_close" class="close fa fa-times" aria-hidden="true" onclick="hideModal('email_modal');"></i>
 			<div id="modal_content">
-				<h2>Thanks for wanting to learn more about OnTrack!</h2>
+				<h2>Thanks for wanting to learn more about OnTrack™!</h2>
 				<p>We're currently developing the application. If you would like to know when it's ready, enter your email address and we'll let you know. <i class="fa fa-smile-o" aria-hidden="true"></i></p>
 				<p>We will not share your email with anyone.</p>
 				<fieldset id="email_form">
 					<input type="text" id="email" placeholder="email address">
 					<button id="email_button">Submit</button>
 				</fieldset>
-				<p><input type="checkbox" id="even_better"> <label for="even_better">Even better - lock in your rate when OnTrack is available for $250 for your next IVF cycle.</label></p>
+				<p><input type="checkbox" id="even_better"> <label for="even_better">Even better - lock in your rate when OnTrack™ is available for $250 for your next IVF cycle.</label></p>
 				<div class="survey">
 					<p><a href="<?php echo $survey; ?>">Will you help us out by answering a few additional questions?</a></p>
 					<p style="font-size:.7em; cursor:pointer;" onclick="hideModal('email_modal')">No thanks</p>
