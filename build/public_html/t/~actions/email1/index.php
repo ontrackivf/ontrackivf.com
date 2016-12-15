@@ -41,6 +41,7 @@ try{
 			// get the old action data
 			$r_old_data = $db_main->query("SELECT `action_data` FROM webtests WHERE `id`=$user_id");
 			$a_old_data = $r_old_data->fetch_assoc();
+			$r_old_data->free();
 			$old_data = $a_old_data['action_data'];
 
 			// convert old data to an array
