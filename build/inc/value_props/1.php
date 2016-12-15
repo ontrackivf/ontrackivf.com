@@ -1,3 +1,12 @@
+<?php
+	// generate price
+	$prices = array('$100', '$250');
+	$price = $prices[array_rand($prices)];
+?>
+
+
+
+
 <div class="background_container">
 	<div class="holder">
 		<img class="logo" src="/img/logo_white.png">
@@ -6,7 +15,7 @@
 		<div class="text-content top_padded">
 			<h2 class="tagline">Why wonder? Know what to expect. Know you're OnTrack™.</h2>
 			<p>Without OnTrack, 15 out of 100 people will make a scheduling or medication mistake during their IVF treatment. OnTrack puts you back in control and let's you know you're doing everything right.</p>
-			<div class="button" onclick="showModal('email_modal')">Learn More</div>
+			<div class="button" id="button1">Learn More</div>
 		</div>
 		<div class="image-content">
 			<img src="/img/macbook_iphone.png">
@@ -39,7 +48,7 @@
 <div class="background_container foot_back">
 	<div class="holder bottom_call_to_action">
 		<h2 class="tagline">Why wonder? Know what to expect. Know you're OnTrack™.</h2>
-		<div class="button center" onclick="showModal('email_modal')">Learn More</div>
+		<div class="button center" id="button2">Learn More</div>
 	</div>
 </div>
 <div class="background_container black_back foot_back">
@@ -63,7 +72,7 @@
 				<p>We will not share your email with anyone.</p>
 				<fieldset id="email_form">
 					<input type="text" id="email">
-					<button>Submit</button>
+					<button id="email_button">Submit</button>
 				</fieldset>
 				<div><input type="checkbox"> </div>
 				<div class="survey">
@@ -75,3 +84,58 @@
 	</div>
 </div>
 <div id="blackout" class="blackout"></div>
+
+
+
+
+<script>
+	// action for this page
+	function sendAction(d1){
+
+		// get the id from the php varible
+		var id = '<?php echo $user_id ?>';
+
+		// ajax send the action data
+		var ajx = $.get(
+			"/t/~actions/default/",
+			{user_id:id, data1:d1 },
+			function( data ) {
+				if(data.error === 0){
+					showModal('email_modal');
+				}else{
+					// this needs to change
+					alert('there was an error, please try again. [1]');
+				}
+			},
+			"json"
+		);
+		ajx.fail( function(){
+			// this needs to change
+			alert('there was an error, please try again. [2]');
+		});
+	}
+
+	// first button
+	$('#button1').click(function(){
+		// check if button is checked
+
+		//data json
+		var d1 = {
+			'button'	: '1',
+			'price'		: '<?php echo $price; ?>'
+		};
+		sendAction(d1);
+	});
+
+	// second button
+	$('#button2').click(function(){
+		var d1 = {
+			'button'	: '2',
+			'price'		: '<?php echo $price; ?>'
+		};
+		sendAction(d1);
+	});
+
+	// email button script
+	
+</script>

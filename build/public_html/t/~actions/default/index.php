@@ -31,31 +31,41 @@ try{
 
     $now = time();
 
+    // get the old action data
+    $r_old_data = $db_main->query("SELECT `action_data` FROM webtests WHERE `id`=$user_id");
+    $a_old_data = $r_old_data->fetch_assoc();
+    $old_data = $a_old_data['action_data'];
+
+    // convert old data to an array
+    $old_data = json_decode($old_data);
+
+    // get the new data
+    $new_data = $data1;
+    // add the time to the action data
+    $new_data['time'] = $now;
+
+    // add the new data to the old data
+    $old_data[] = $new_data;
+
+    // encode the action data into json
+    $action_data = json_encode($old_data);
+
+
     if($exclude === FALSE){
         // upload tracking info
-        $stmt = $db_main->prepare("UPDATE webtests SET ");
-        $stmt->bind_param("iiiissss",
-            $now,   /* enter time */
-        );
+        $stmt = $db_main->prepare("UPDATE webtests SET `action_data`=? WHERE `id`=$user_id LIMIT 1");
+        $stmt->bind_param("s", $action_data);
         $stmt->execute();
-
-        // get the id of the new user session in order to use for tracking further clicks
-        $user_id = $db_main->insert_id;
     }else{
         $user_id = FALSE;
     }
-
-
-
-
-
 
     $error = 0;
 
 }catch(mysqli_sql_exception $e){
 	$error = 1;
 }catch(Exception $e){
-	$error = 1;
+	$error = 2;
 }
 
 /* CLOSE OPEN DATABASES */
