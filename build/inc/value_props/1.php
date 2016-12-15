@@ -55,9 +55,21 @@
 	<div class="modal-wrap">
 		<div class="modal">
 			<i id="modal_close" class="close fa fa-times" aria-hidden="true" onclick="hideModal('email_modal');"></i>
-			<h1 id="modal_h1">OnTrack</h1>
+
 			<div id="modal_content">
-				<p>Hello world.</p>
+				<div class="vision"><p>A world without the pain and uncertainty of infertility</p><span>Our Vision</span></div>
+				<h2>Thanks for wanting to learn more about OnTrack!</h2>
+				<p>We're currently developing the application. If you would like to know when it's ready, enter your email address and we'll let you know. <i class="fa fa-smile-o" aria-hidden="true"></i></p>
+				<p>We will not share your email with anyone.</p>
+				<fieldset id="email_form">
+					<input type="text" id="email">
+					<button>Submit</button>
+				</fieldset>
+				<div><input type="checkbox"> </div>
+				<div class="survey">
+					<p><a href="#">Also, will you help us out by answering a few additional questions?</a></p>
+					<p style="font-size:.7em;">No thanks</p>
+				</div>
 			</div>
 		</div>
 	</div>
