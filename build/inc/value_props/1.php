@@ -128,17 +128,23 @@
 			{user_id:id, data1:d1, email:e1 },
 			function( data ) {
 				if(data.error === 0){
+					document.getElementById('email_button').innerHTML = 'Submit';
+					document.getElementById('email_button').disabled = false;
+					document.getElementById('email').disabled = false;
+					document.getElementById('email').value = '';
 					window.location = '<?php echo $survey; ?>';
 				}else if(data.error === 3){
 					//change this (not alerts)
 					alert('you did not enter a valid email address');
 					document.getElementById('email_button').innerHTML = 'Submit';
 					document.getElementById('email_button').disabled = false;
+					document.getElementById('email').disabled = false;
 				}else{
 					// this needs to change
 					alert('there was an error, please try again. [e1]');
 					document.getElementById('email_button').innerHTML = 'Submit';
 					document.getElementById('email_button').disabled = false;
+					document.getElementById('email').disabled = false;
 				}
 			},
 			"json"
@@ -148,6 +154,7 @@
 			alert('there was an error, please try again. [e2]');
 			document.getElementById('email_button').innerHTML = 'Submit';
 			document.getElementById('email_button').disabled = false;
+			document.getElementById('email').disabled = false;
 		});
 
 	};
@@ -158,8 +165,9 @@
 	$('#email_button').click(function(){
 
 		// change the submit button to spinner
-		this.innerHTML = '<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>';
-		this.disabled = true;
+		document.getElementById('email_button').innerHTML = '<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>';
+		document.getElementById('email_button').disabled = true;
+		document.getElementById('email').disabled = true;
 
 		// get the id from the php varible
 		var id = '<?php echo $user_id ?>';
