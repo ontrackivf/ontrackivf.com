@@ -48,7 +48,7 @@ try{
 
 	}else{
 
-		$error = 2;
+		$error = 3;
 
 	}
 
@@ -57,6 +57,7 @@ try{
 
 }catch(mysqli_sql_exception $e){
 	$error = 1;
+	echo $e->getMessage();
 }catch(Exception $e){
 	$error = 2;
 }

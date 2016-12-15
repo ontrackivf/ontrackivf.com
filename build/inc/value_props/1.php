@@ -129,22 +129,27 @@
 			function( data ) {
 				if(data.error === 0){
 					window.location = '<?php echo $survey; ?>';
-				}else if(data.error === 2){
+				}else if(data.error === 3){
 					//change this (not alerts)
-					alert('you did not enter a vlid email address');
+					alert('you did not enter a valid email address');
+					document.getElementById('email_button').innerHTML = 'Submit';
+					document.getElementById('email_button').disabled = false;
 				}else{
 					// this needs to change
-					alert('there was an error, please try again. [1]');
+					alert('there was an error, please try again. [e1]');
+					document.getElementById('email_button').innerHTML = 'Submit';
+					document.getElementById('email_button').disabled = false;
 				}
 			},
 			"json"
 		);
 		ajx.fail( function(){
 			// this needs to change
-			alert('there was an error, please try again. [2]');
+			alert('there was an error, please try again. [e2]');
+			document.getElementById('email_button').innerHTML = 'Submit';
+			document.getElementById('email_button').disabled = false;
 		});
-		document.getElementById('email_button').innerHTML = 'Submit';
-		document.getElementById('email_button').disabled = false;
+
 	};
 
 
