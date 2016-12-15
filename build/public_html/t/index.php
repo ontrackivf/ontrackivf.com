@@ -123,6 +123,10 @@ ob_end_flush();
 try{
 
     if($exclude === FALSE){
+
+        // strip unwanted characters from url string before saved
+        $rvs = preg_replace("/[^a-zA-Z\/]/", "", $rvs);
+
         // upload tracking info
         $stmt = $db_main->prepare("INSERT INTO webtests(referrer, value_prop, survey, entertime, url, ipaddress, browser, http_referrer) VALUES(?,?,?,?,?,?,?,?)");
         $stmt->bind_param("iiiissss",
