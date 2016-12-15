@@ -2,12 +2,12 @@
 //@codekit-prepend "modal.js"
 
 // action for this page
-function sendAction(id, d1, callback){
+function sendAction(id, dd, callback){
 
 	// ajax send the action data
 	var ajx = $.get(
 		"/t/~actions/default/",
-		{user_id:id, data1:d1 },
+		{user_id:id, data1:dd },
 		function( data ) {
 			if(data.error === 0){
 				callback;

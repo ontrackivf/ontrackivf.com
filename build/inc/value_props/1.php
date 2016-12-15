@@ -121,11 +121,11 @@
 
 
 	// email address save function
-	function sendEmail(id, d1){
+	function sendEmail(id, d1, e1){
 		// ajax send the action data
 		var ajx = $.get(
 			"/t/~actions/email1/",
-			{user_id:id, data1:d1 },
+			{user_id:id, data1:d1, email:e1 },
 			function( data ) {
 				if(data.error === 0){
 					window.location = '<?php echo $survey; ?>';
@@ -180,7 +180,7 @@
 		};
 
 		//send it, with calback to save the email
-		sendAction(id, d1, sendEmail(id,email) );
+		sendEmail(id,d1,email);
 	});
 
 

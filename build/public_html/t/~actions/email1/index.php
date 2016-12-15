@@ -19,6 +19,7 @@ $error = null;
 $return = null;
 $user_id = (isset($_GET['user_id'])) ? $_GET['user_id'] : null;
 $data1 = (isset($_GET['data1'])) ? $_GET['data1'] : null;
+$email = (isset($_GET['email'])) ? $_GET['email'] : null;
 
 
 try{
@@ -29,16 +30,37 @@ try{
         $exclude = FALSE;
     }
 
+	$now = time();
 
 	// verify email
-	if(filter_var($data1, FILTER_VALIDATE_EMAIL)){
+	if(filter_var($email, FILTER_VALIDATE_EMAIL)){
 		if($exclude === FALSE){
 
-			$email = $data1;
+
+
+			// get the old action data
+			$r_old_data = $db_main->query("SELECT `action_data` FROM webtests WHERE `id`=$user_id");
+			$a_old_data = $r_old_data->fetch_assoc();
+			$old_data = $a_old_data['action_data'];
+
+			// convert old data to an array
+			$old_data = json_decode($old_data);
+
+			// get the new data
+			$new_data = $data1;
+			// add the time to the action data
+			$new_data['time'] = $now;
+
+			// add the new data to the old data
+			$old_data[] = $new_data;
+
+			// encode the action data into json
+			$action_data = json_encode($old_data);
+
 
 			// upload tracking info
-			$stmt = $db_main->prepare("UPDATE webtests SET `email`=? WHERE `id`=$user_id LIMIT 1");
-			$stmt->bind_param("s", $email);
+			$stmt = $db_main->prepare("UPDATE webtests SET `email`=?, `action_data`=? WHERE `id`=$user_id LIMIT 1");
+			$stmt->bind_param("ss", $email, $action_data);
 			$stmt->execute();
 		}else{
 			$user_id = FALSE;
