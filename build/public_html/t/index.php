@@ -125,7 +125,7 @@ try{
     if($exclude === FALSE){
 
         // strip unwanted characters from url string before saved
-        $rvs = preg_replace("/[^a-zA-Z\/]/", "", $rvs);
+        $rvs = preg_replace("/[^a-zA-Z0-9\/]/", "", $rvs);
 
         // upload tracking info
         $stmt = $db_main->prepare("INSERT INTO webtests(referrer, value_prop, survey, entertime, url, ipaddress, browser, http_referrer) VALUES(?,?,?,?,?,?,?,?)");
@@ -145,35 +145,41 @@ try{
         // get the id of the new user session in order to use for tracking further clicks
         $user_id = $db_main->insert_id;
     }else{
-        $user_id = FALSE;
+        $user_id = 'db_error';
     }
-
-
-
-    // double check to see that the value prop exists
-    if(!file_exists(HOME_PATH.'inc/value_props/'.$v.'.php')){
-        /*  this should never happen
-            it will only happen if the default value prop (1.php)
-            is deleted from the server
-        */
-        throw new Exception('missing vp');
-    }
-
-
-    // display the value prop
-    include 'value_props/'.$v.'.php';
-
-
 
 }catch(mysqli_sql_exception $e){
-    // content in case there is an error uploading data
-    echo 'data error';
+
+    // log data upload failure to text file, along with the data, and display the page anyways
+
+    $user_id = FALSE;
 
 }catch(Exception $e){
-    // default content in case default value prop is missing or other error
-    echo 'value prop 1 missing?';
+
+    // log data upload failure to text file, along with the data, and display the page anyways
 
 }
+
+
+
+// double check to see that the value prop exists
+if(!file_exists(HOME_PATH.'inc/value_props/'.$v.'.php')){
+    /*  this should never happen
+        it will only happen if the default value prop (1.php)
+        is deleted from the server
+    */
+    echo '<p>value prop 1 missing</p>';
+}
+
+
+// display the value prop
+include 'value_props/'.$v.'.php';
+
+
+
+
+
+
 
 
 /* FOOTER */ require('layout/footer1.php');

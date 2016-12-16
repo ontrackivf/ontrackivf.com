@@ -36,34 +36,40 @@ try{
 	if(filter_var($email, FILTER_VALIDATE_EMAIL)){
 		if($exclude === FALSE){
 
+            //check to make sure there was no database error during original page hit
+            if($user_id === 'db_error'){
+
+                // log info into text file
+
+            }else{
+
+    			// get the old action data
+    			$r_old_data = $db_main->query("SELECT `action_data` FROM webtests WHERE `id`=$user_id");
+    			$a_old_data = $r_old_data->fetch_assoc();
+    			$r_old_data->free();
+    			$old_data = $a_old_data['action_data'];
+
+    			// convert old data to an array
+    			$old_data = json_decode($old_data);
+
+    			// get the new data
+    			$new_data = $data1;
+    			// add the time to the action data
+    			$new_data['time'] = $now;
+
+    			// add the new data to the old data
+    			$old_data[] = $new_data;
+
+    			// encode the action data into json
+    			$action_data = json_encode($old_data);
 
 
-			// get the old action data
-			$r_old_data = $db_main->query("SELECT `action_data` FROM webtests WHERE `id`=$user_id");
-			$a_old_data = $r_old_data->fetch_assoc();
-			$r_old_data->free();
-			$old_data = $a_old_data['action_data'];
-
-			// convert old data to an array
-			$old_data = json_decode($old_data);
-
-			// get the new data
-			$new_data = $data1;
-			// add the time to the action data
-			$new_data['time'] = $now;
-
-			// add the new data to the old data
-			$old_data[] = $new_data;
-
-			// encode the action data into json
-			$action_data = json_encode($old_data);
-
-
-			// upload tracking info
-			$stmt = $db_main->prepare("UPDATE webtests SET `email`=?, `action_data`=? WHERE `id`=$user_id LIMIT 1");
-			$stmt->bind_param("ss", $email, $action_data);
-			$stmt->execute();
-			$stmt->close();
+    			// upload tracking info
+    			$stmt = $db_main->prepare("UPDATE webtests SET `email`=?, `action_data`=? WHERE `id`=$user_id LIMIT 1");
+    			$stmt->bind_param("ss", $email, $action_data);
+    			$stmt->execute();
+    			$stmt->close();
+            }
 		}else{
 			$user_id = FALSE;
 		}

@@ -76,7 +76,7 @@
 				</fieldset>
 				<p><input type="checkbox" id="even_better"> <label for="even_better">Even better - lock in your rate when OnTrack™ is available for $250 for your next IVF cycle.</label></p>
 				<div class="survey">
-					<p><a href="<?php echo $survey; ?>">Will you help us out by answering a few additional questions?</a></p>
+					<p id="survey_link">Will you help us out by answering a few additional questions?</p>
 					<p style="font-size:.7em; cursor:pointer;" onclick="hideModal('email_modal')">No thanks</p>
 				</div>
 				<div class="vision"><p>&quot;A world without the pain and uncertainty of infertility.&quot;</p><span>Our Vision</span></div>
@@ -90,6 +90,11 @@
 
 
 <script>
+
+	//handle survey link
+	$('#survey_link').click(function(){
+		window.location = '<?php echo $survey_link ?>';
+	});
 
 
 	// first button
@@ -135,13 +140,13 @@
 					window.location = '<?php echo $survey; ?>';
 				}else if(data.error === 3){
 					//change this (not alerts)
-					alert('you did not enter a valid email address');
+					alert('You did not enter a valid email address.');
 					document.getElementById('email_button').innerHTML = 'Submit';
 					document.getElementById('email_button').disabled = false;
 					document.getElementById('email').disabled = false;
 				}else{
 					// this needs to change
-					alert('there was an error, please try again. [e1]');
+					alert('There was a problem saving your email address, please try again. [e1]');
 					document.getElementById('email_button').innerHTML = 'Submit';
 					document.getElementById('email_button').disabled = false;
 					document.getElementById('email').disabled = false;
@@ -151,7 +156,7 @@
 		);
 		ajx.fail( function(){
 			// this needs to change
-			alert('there was an error, please try again. [e2]');
+			alert('There was a problem saving your email address, please try again. [e2]');
 			document.getElementById('email_button').innerHTML = 'Submit';
 			document.getElementById('email_button').disabled = false;
 			document.getElementById('email').disabled = false;
