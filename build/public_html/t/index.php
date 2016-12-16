@@ -127,36 +127,83 @@ try{
         // strip unwanted characters from url string before saved
         $rvs = preg_replace("/[^a-zA-Z0-9\/]/", "", $rvs);
 
-        // upload tracking info
-        $stmt = $db_main->prepare("INSERT INTO webtests(referrer, value_prop, survey, entertime, url, ipaddress, browser, http_referrer) VALUES(?,?,?,?,?,?,?,?)");
-        $stmt->bind_param("iiiissss",
-            $r,     /* referrer */
-            $v,     /* value prop */
-            $s,     /* survey */
-            $now,   /* enter time */
-            $rvs,   /* url string */
-            $_SERVER['REMOTE_ADDR'],    /* ip address */
-            $_SERVER['HTTP_USER_AGENT'],/* browser */
-            $_SERVER['HTTP_REFERER']    /* browser reported referrer */
-        );
-        $stmt->execute();
-        $stmt->close();
+        if($db_main){
+            // upload tracking info
+            $stmt = $db_main->prepare("INSERT INTO webtests(referrer, value_prop, survey, entertime, url, ipaddress, browser, http_referrer) VALUES(?,?,?,?,?,?,?,?)");
+            $stmt->bind_param("iiiissss",
+                $r,     /* referrer */
+                $v,     /* value prop */
+                $s,     /* survey */
+                $now,   /* enter time */
+                $rvs,   /* url string */
+                $_SERVER['REMOTE_ADDR'],    /* ip address */
+                $_SERVER['HTTP_USER_AGENT'],/* browser */
+                $_SERVER['HTTP_REFERER']    /* browser reported referrer */
+            );
+            $stmt->execute();
+            $stmt->close();
 
-        // get the id of the new user session in order to use for tracking further clicks
-        $user_id = $db_main->insert_id;
+            // get the id of the new user session in order to use for tracking further clicks
+            $user_id = $db_main->insert_id;
+
+        }else{
+
+            // log data upload failure to text file, along with the data, and display the page anyways
+            $file = HOME_PATH.'logs/t_index_php-'.microtime().'.txt';
+            $log = fopen($file, 'w');
+            $msg  = 'database error could not save info on original page hit'."\t";
+            $msg .= date("Y-m-d h:i:sa",time())."\t";
+            $msg .= $r."\t";
+            $msg .= $v."\t";
+            $msg .= $s."\t";
+            $msg .= $_SERVER['REMOTE_ADDR']."\t";
+            $msg .= $_SERVER['HTTP_USER_AGENT']."\t";
+            $msg .= $_SERVER['HTTP_REFERER'];
+            fwrite($log, $msg);
+            fclose($log);
+
+            $user_id = 'db_error';
+
+        }
+
     }else{
-        $user_id = 'db_error';
+        $user_id = 'false';
     }
 
 }catch(mysqli_sql_exception $e){
 
     // log data upload failure to text file, along with the data, and display the page anyways
+    $file = HOME_PATH.'logs/t_index_php-'.microtime().'.txt';
+    $log = fopen($file, 'w');
+    $msg  = 'database error could not save info on original page hit'."\t";
+    $msg .= date("Y-m-d h:i:sa",time())."\t";
+    $msg .= $r."\t";
+    $msg .= $v."\t";
+    $msg .= $s."\t";
+    $msg .= $_SERVER['REMOTE_ADDR']."\t";
+    $msg .= $_SERVER['HTTP_USER_AGENT']."\t";
+    $msg .= $_SERVER['HTTP_REFERER'];
+    fwrite($log, $msg);
+    fclose($log);
+
 
     $user_id = FALSE;
 
 }catch(Exception $e){
 
     // log data upload failure to text file, along with the data, and display the page anyways
+    $file = HOME_PATH.'logs/t_index_php-'.microtime().'.txt';
+    $log = fopen($file, 'w');
+    $msg  = 'database error could not save info on original page hit'."\t";
+    $msg .= date("Y-m-d h:i:sa",time())."\t";
+    $msg .= $r."\t";
+    $msg .= $v."\t";
+    $msg .= $s."\t";
+    $msg .= $_SERVER['REMOTE_ADDR']."\t";
+    $msg .= $_SERVER['HTTP_USER_AGENT']."\t";
+    $msg .= $_SERVER['HTTP_REFERER'];
+    fwrite($log, $msg);
+    fclose($log);
 
 }
 

@@ -93,7 +93,7 @@
 
 	//handle survey link
 	$('#survey_link').click(function(){
-		window.location = '<?php echo $survey_link ?>';
+		window.location = '<?php echo $survey; ?>';
 	});
 
 

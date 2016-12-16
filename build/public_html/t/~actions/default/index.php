@@ -21,6 +21,7 @@ $user_id = (isset($_GET['user_id'])) ? $_GET['user_id'] : null;
 $data1 = (isset($_GET['data1'])) ? $_GET['data1'] : null;
 
 
+
 try{
     // check to see if the user is an employee and should be excluded
     if(isset($_COOKIE['ontrack_webtest_exclude']) && $_COOKIE['ontrack_webtest_exclude'] === 'exclude_me'){
@@ -36,38 +37,44 @@ try{
         //check to make sure there was no database error during original page hit
         if($user_id === 'db_error'){
 
-            // log info into text file
+            // log to text file
+            $file = HOME_PATH.'logs/default_index_php-'.microtime().'.txt';
+            $log = fopen($file, 'w');
+            $msg = 'database error could not save button push'."\t".date("Y-m-d h:i:sa",time())."\t".json_encode($data1);
+            fwrite($log, $msg);
+            fclose($log);
 
         }else{
 
-            // get the old action data
-            $r_old_data = $db_main->query("SELECT `action_data` FROM webtests WHERE `id`=$user_id");
-            $a_old_data = $r_old_data->fetch_assoc();
-            $r_old_data->free();
-            $old_data = $a_old_data['action_data'];
+                // get the old action data
+                $r_old_data = $db_main->query("SELECT `action_data` FROM webtests WHERE `id`=$user_id");
+                $a_old_data = $r_old_data->fetch_assoc();
+                $r_old_data->free();
+                $old_data = $a_old_data['action_data'];
 
-            // convert old data to an array
-            $old_data = json_decode($old_data);
-
-
-            // get the new data
-            $new_data = $data1;
+                // convert old data to an array
+                $old_data = json_decode($old_data);
 
 
-            // add the time to the action data
-            $new_data['time'] = $now;
+                // get the new data
+                $new_data = $data1;
 
-            // add the new data to the old data
-            $old_data[] = $new_data;
 
-            // encode the action data into json
-            $action_data = json_encode($old_data);
+                // add the time to the action data
+                $new_data['time'] = $now;
 
-            // upload tracking info
-            $stmt = $db_main->prepare("UPDATE webtests SET `action_data`=? WHERE `id`=$user_id LIMIT 1");
-            $stmt->bind_param("s", $action_data);
-            $stmt->execute();
-            $stmt->close();
+                // add the new data to the old data
+                $old_data[] = $new_data;
+
+                // encode the action data into json
+                $action_data = json_encode($old_data);
+
+                // upload tracking info
+                $stmt = $db_main->prepare("UPDATE webtests SET `action_data`=? WHERE `id`=$user_id LIMIT 1");
+                $stmt->bind_param("s", $action_data);
+                $stmt->execute();
+                $stmt->close();
+
         }
 
 
@@ -78,6 +85,12 @@ try{
     $error = 0;
 
 }catch(mysqli_sql_exception $e){
+    // log to text file
+    $file = HOME_PATH.'logs/default_index_php-'.microtime().'.txt';
+    $log = fopen($file, 'w');
+    $msg = 'database error could not save button push'."\t".date("Y-m-d h:i:sa",time())."\t".json_encode($data1);
+    fwrite($log, $msg);
+    fclose($log);
 	$error = 1;
 }catch(Exception $e){
 	$error = 2;

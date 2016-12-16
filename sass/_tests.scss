@@ -176,7 +176,14 @@ ul.features{
 	@include outer-container;
 }
 
-
+#survey_link{
+	text-decoration: underline;
+	cursor:pointer;
+	color:$ontrack_purple;
+	&:hover{
+		color:$dark_purple;
+	}
+}
 
 @include -phnx-modal(#email_modal, 600, 60){
 	padding:10%;

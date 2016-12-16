@@ -44,7 +44,19 @@ foreach ($database_creds as $db){
 		}
 	}
 }
-if($db_conn_err){ print '<p>'.$db_conn_msg.'</p>'; exit; }
+
+if($db_conn_err){
+	// log to text file
+	$file = HOME_PATH.'logs/keys_php-'.microtime().'.txt';
+	$log = fopen($file, 'w');
+	$msg = 'database failed to connect'."\t".date("Y-m-d h:i:sa",time());
+	fwrite($log, $msg);
+	fclose($log);
+
+
+//	print '<p>'.$db_conn_msg.'</p>'; exit;
+
+}
 
 
 ?>

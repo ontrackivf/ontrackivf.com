@@ -9,6 +9,7 @@ function sendAction(id, dd, callback){
 		"/t/~actions/default/",
 		{user_id:id, data1:dd },
 		function( data ) {
+
 			if(data.error === 0){
 				callback;
 			}else{

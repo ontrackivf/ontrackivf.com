@@ -39,7 +39,12 @@ try{
             //check to make sure there was no database error during original page hit
             if($user_id === 'db_error'){
 
-                // log info into text file
+                // log to text file
+                $file = HOME_PATH.'logs/email1_php-'.microtime().'.txt';
+                $log = fopen($file, 'w');
+                $msg = 'database error could not save email'."\t".date("Y-m-d h:i:sa",time())."\t".json_encode($data1)."\t".$email;
+                fwrite($log, $msg);
+                fclose($log);
 
             }else{
 
