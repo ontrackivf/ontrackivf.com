@@ -2,7 +2,9 @@
 
 <?php
 
-	//include_once 'ga.php';
+	if($exclude === FALSE){
+		//include_once 'ga.php';
+	}
 
 ?>
 

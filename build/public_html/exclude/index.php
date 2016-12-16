@@ -4,13 +4,21 @@
 
 	/* WHICH DATABASES DO WE NEED */
 	$db2use = array(
-	    'db_main'		=> FALSE
+		'db_main'		=> FALSE
 	);
 
 	/* GET KEYS TO SITE */ require(PATH_TO_KEYS);
 
-	setcookie('ontrack_webtest_exclude', 'exclude_me', time()+60*60*24*365, '/', COOKIE_DOMAIN );
+	if(isset($_COOKIE['ontrack_webtest_exclude']) && $_COOKIE['ontrack_webtest_exclude'] === 'exclude_me'){
+		echo '<p>Cookie is set. You will be excluded.</p>';
+	}else{
+		echo '<p>Cookie is NOT set. You WILL NOT be excluded.</p>';
+	}
 
-	echo '<p>Cookie Set.</p><p><a href="/exclude/test/">Test your cookie.</a></p><p><a href="/exclude/delete/">delete your cookie</a></p>';
+	echo '
+		<p><a href="/exclude/">Test your cookie.</a></p>
+		<p><a href="/exclude/set/">Set your cookie.</a></p>
+		<p><a href="/exclude/delete/">Delete your cookie.</a></p>
+	';
 
 ?>
