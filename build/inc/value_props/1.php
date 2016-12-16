@@ -74,7 +74,7 @@
 					<input type="text" id="email" placeholder="email address">
 					<button id="email_button">Submit</button>
 				</fieldset>
-				<p><input type="checkbox" id="even_better"> <label for="even_better">Even better - lock in your rate when OnTrack™ is available for $250 for your next IVF cycle.</label></p>
+				<p><input type="checkbox" id="even_better"> <label for="even_better">Even better - lock in your rate when OnTrack™ is available for <?php echo $price; ?> for your next IVF cycle.</label></p>
 				<div class="survey">
 					<p id="survey_link">Will you help us out by answering a few additional questions?</p>
 					<p style="font-size:.7em; cursor:pointer;" onclick="hideModal('email_modal')">No thanks</p>
