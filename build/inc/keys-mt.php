@@ -22,9 +22,9 @@ $database_creds = array(
 	'db_main' =>
 	array(
 		'label'	=> "db_main",
-		'host'  => "localhost",
+		'host'  => "internal-db.s174108.gridserver.com",
 		'uname' => "db174108_ot",
-		'pword' => "UcnTnoL7bTWvZCbb(",
+		'pword' => "V}cJsH2qrUJAHtzNw",
 		'dbase' => "db174108_ot_main"
 	)
 );

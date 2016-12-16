@@ -22,7 +22,7 @@ $database_creds = array(
 	'db_main' =>
 	array(
 		'label'	=> "db_main",
-		'host'  => "internal-db.s174108.gridserver.com",
+		'host'  => "localhost",
 		'uname' => "ontracki_tests",
 		'pword' => "BzzorHuVk8hctPbMd",
 		'dbase' => "ontracki_tests"
