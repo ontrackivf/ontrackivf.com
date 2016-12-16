@@ -185,10 +185,12 @@ include 'value_props/'.$v.'.php';
 /* FOOTER */ require('layout/footer1.php');
 
 /* CLOSE OPEN DATABASES */
-foreach ($db2use as $db => $used) {
-	if($used){
-		${$db}->close();
-	}
+if($db_conn_err !== TRUE){
+    foreach ($db2use as $db => $used) {
+    	if($used){
+    		${$db}->close();
+    	}
+    }
 }
 
 ?>

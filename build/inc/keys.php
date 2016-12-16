@@ -44,7 +44,9 @@ foreach ($database_creds as $db){
 		}
 	}
 }
-if($db_conn_err){ print '<p>'.$db_conn_msg.'</p>'; exit; }
+// log to text file
+
+//if($db_conn_err){ print '<p>'.$db_conn_msg.'</p>'; exit; }
 
 
 ?>

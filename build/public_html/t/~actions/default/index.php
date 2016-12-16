@@ -84,10 +84,12 @@ try{
 }
 
 /* CLOSE OPEN DATABASES */
-foreach ($db2use as $db => $used) {
-	if($used){
-		${$db}->close();
-	}
+if($db_conn_err !== TRUE){
+    foreach ($db2use as $db => $used) {
+    	if($used){
+    		${$db}->close();
+    	}
+    }
 }
 
 
