@@ -1,0 +1,8 @@
+# Fix Rewrite
+Options -Multiviews
+
+# turn on rewrites
+RewriteEngine on
+
+# set the rewrite base directory
+RewriteBase /exclude/

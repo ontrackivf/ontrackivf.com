@@ -97,6 +97,12 @@
 		"oAP": "\/build\/public_html\/css\/webtests.css.map",
 		"oF": 0
 		},
+	"\/build\/public_html\/exclude\/.htaccess": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/public_html\/exclude\/.htaccess",
+		"oF": 0
+		},
 	"\/build\/public_html\/exclude\/delete.php": {
 		"ft": 8192,
 		"oA": 2,
