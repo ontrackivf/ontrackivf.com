@@ -13,9 +13,9 @@
 
 	echo '
 		<p>Cookie Set.</p>
-		<p><a href="/exclude/">Test your cookie.</a></p>
-		<p><a href="/exclude/set/">Set your cookie.</a></p>
-		<p><a href="/exclude/delete/">Delete your cookie.</a></p>
+		<p><a href="/exclude/test.php">Test your cookie.</a></p>
+		<p><a href="/exclude/set.php">Set your cookie.</a></p>
+		<p><a href="/exclude/delete.php">Delete your cookie.</a></p>
 	';
 
 ?>
