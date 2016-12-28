@@ -1,10 +1,10 @@
 <?php
 	// generate price
-	$prices = array('$100', '$250');
+	$prices = array('$99', '$99');
 	$price = $prices[array_rand($prices)];
 
 	// set survey
-	$survey = 'https://goo.gl/forms/LtkEdqPgBZNAvYIv2';
+	$survey = 'https://goo.gl/forms/sW1xhWG3dlqpvxU12';
 ?>
 
 
@@ -15,9 +15,10 @@
 	</div>
 	<div class="holder">
 		<div class="text-content top_padded">
-			<h2 class="tagline">Why wonder during IVF? Know what to expect. Know you're OnTrack™.</h2>
-			<p>Without OnTrack™, 15 out of 100 people will make a scheduling or medication mistake during their IVF treatment. The OnTrack™ service puts you back in control and let's you know you're doing everything right.</p>
-			<div class="button" id="button1">Buy Now</div>
+			<h2 class="tagline">Complete control of your fertility medication.</h2>
+			<p>15 out of 100 people make a mistake with their medication during treatment and those mistakes sometimes jeopardize their cycle. With OnTrack you won't make a mistake with your medication. A typical OnTrack user saves $500 per cycle by not overspending on excess medication.
+			<br><br>Try OnTrack for free for the first week, then get unlimited access for $99.</p>
+			<div class="button" id="button1">Sign Up</div>
 		</div>
 		<div class="image-content">
 			<img src="/img/macbook_iphone.png">
@@ -33,15 +34,15 @@
 			<ul class="features">
 				<li>
 					<img src="/img/multi_platform.png">
-					<p>OnTrack™ is a cloud-based web application for helping women engaged in fertility treatment manage their treatment better.</p>
+					<p>OnTrack™ is a cloud-based web application that helps you organize and keep track of your fertility medication.</p>
 				</li>
 				<li>
 					<img src="/img/med_management.png">
-					<p>OnTrack™ keeps track of your medication supply and tells you when you need to get more based on your pharmacy’s hours.</p>
+					<p>OnTrack alerts you when you need to refill a supply, when a medication expires or is recalled.</p>
 				</li>
 				<li>
 					<img src="/img/checklist.png">
-					<p>OnTrack™ is your personal guide through the IVF treatment process.</p>
+					<p>OnTrack™ is your personal fertility medication assistant.</p>
 				</li>
 			</ul>
 		</div>
@@ -49,8 +50,8 @@
 </div>
 <div class="background_container foot_back">
 	<div class="holder bottom_call_to_action">
-		<h2 class="tagline">Why wonder during IVF? Know what to expect. Know you're OnTrack™.</h2>
-		<div class="button center" id="button2">Buy Now</div>
+		<h2 class="tagline">Complete control of your fertility medication.</h2>
+		<div class="button center" id="button2">Sign Up</div>
 	</div>
 </div>
 <div class="background_container black_back foot_back">
