@@ -2,7 +2,7 @@
 //@codekit-prepend "modal.js"
 
 // action for this page
-function sendAction(id, dd, callback){
+function sendAction(id, dd, callback, redir){
 
 	// ajax send the action data
 	var ajx = $.get(
@@ -11,7 +11,12 @@ function sendAction(id, dd, callback){
 		function( data ) {
 
 			if(data.error === 0){
-				callback;
+				if(callback === null){
+					window.location = redir;
+				}else{
+					callback;
+				}
+
 			}else{
 				// this needs to change
 				alert('there was an error, please try again. [1]');

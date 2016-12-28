@@ -51,10 +51,16 @@
 		"oAP": "\/build\/inc\/layout\/header1.php",
 		"oF": 0
 		},
-	"\/build\/inc\/value_props\/1.php": {
+	"\/build\/inc\/value_props\/2.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/inc\/value_props\/1.php",
+		"oAP": "\/build\/inc\/value_props\/2.php",
+		"oF": 0
+		},
+	"\/build\/inc\/value_props\/3.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/inc\/value_props\/3.php",
 		"oF": 0
 		},
 	"\/build\/logs": {
@@ -225,12 +231,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/build\/public_html\/t\/~actions\/default\/index.php",
-		"oF": 0
-		},
-	"\/build\/public_html\/t\/~actions\/email1\/index.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/build\/public_html\/t\/~actions\/email1\/index.php",
 		"oF": 0
 		},
 	"\/README.md": {
