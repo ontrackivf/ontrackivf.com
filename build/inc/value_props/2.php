@@ -106,7 +106,7 @@
 <?php
 
 	if($exclude === FALSE){
-		//include_once 'ga2.php';
+		include_once 'ga2.php';
 	}
 
 ?>
