@@ -5,7 +5,7 @@ Options -Multiviews
 RewriteEngine on
 
 # set the rewrite base directory
-RewriteBase /t/
+RewriteBase /
 
 # get all characters after the slash and pass them to the script
-RewriteRule ^([A-Za-z0-9/]+)$ index.php?rvs=$1 [L]
+RewriteRule ^([A-Za-z0-9-/]+)$ /t/index.php?rvs=$1 [L]

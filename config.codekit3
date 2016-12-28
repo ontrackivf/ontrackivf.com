@@ -63,6 +63,12 @@
 		"oAP": "\/build\/build\/logs",
 		"oF": 0
 		},
+	"\/build\/public_html\/.htaccess": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/public_html\/.htaccess",
+		"oF": 0
+		},
 	"\/build\/public_html\/css\/webtests.css": {
 		"aP": 0,
 		"bl": 0,
@@ -207,12 +213,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/build\/public_html\/root_settings.php",
-		"oF": 0
-		},
-	"\/build\/public_html\/t\/.htaccess": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/build\/public_html\/t\/.htaccess",
 		"oF": 0
 		},
 	"\/build\/public_html\/t\/index.php": {
