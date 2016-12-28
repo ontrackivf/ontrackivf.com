@@ -96,3 +96,11 @@
 
 
 </script>
+
+<?php
+
+	if($exclude === FALSE){
+		//include_once 'ga3.php';
+	}
+
+?>

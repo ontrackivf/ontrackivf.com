@@ -101,3 +101,11 @@
 
 
 </script>
+
+<?php
+
+	if($exclude === FALSE){
+		//include_once 'ga2.php';
+	}
+
+?>

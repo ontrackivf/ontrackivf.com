@@ -15,10 +15,16 @@
 		"oAP": "\/.gitignore",
 		"oF": 0
 		},
-	"\/build\/inc\/ga.php": {
+	"\/build\/inc\/ga2.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/inc\/ga.php",
+		"oAP": "\/build\/inc\/ga2.php",
+		"oF": 0
+		},
+	"\/build\/inc\/ga3.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/build\/inc\/ga3.php",
 		"oF": 0
 		},
 	"\/build\/inc\/keys-mt.php": {
