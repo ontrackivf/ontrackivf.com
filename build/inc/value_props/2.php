@@ -1,6 +1,6 @@
 <?php
 	// generate price
-	$prices = array('$99', '$99');
+	$prices = array('$249', '$249');
 	$price = $prices[array_rand($prices)];
 
 	// set survey
