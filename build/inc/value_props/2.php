@@ -1,7 +1,8 @@
 <?php
 	// generate price
-	$prices = array('$249', '$249');
-	$price = $prices[array_rand($prices)];
+	// $prices = array('$249', '$249');
+	// $price = $prices[array_rand($prices)];
+	$price = '$249';
 
 	// set survey
 	$survey = 'https://goo.gl/forms/sW1xhWG3dlqpvxU12';
@@ -17,7 +18,7 @@
 		<div class="text-content top_padded">
 			<h2 class="tagline">Complete control of your fertility medication.</h2>
 			<p>15 out of 100 people make a mistake with their medication during treatment and those mistakes sometimes jeopardize their cycle. With OnTrack you won't make a mistake with your medication. A typical OnTrack user saves $500 per cycle by not overspending on excess medication.
-			<br><br>Try OnTrack for free for the first week, then get unlimited access for $99.</p>
+			<br><br>Try OnTrack for free for the first week, then get unlimited access for <?php echo $price; ?>.</p>
 			<div class="button" id="button1">Sign Up</div>
 		</div>
 		<div class="image-content">
