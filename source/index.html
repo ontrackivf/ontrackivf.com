@@ -7,6 +7,7 @@
 		<meta name="viewport" content="initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" media="all" href="/css/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 	</head>
 	<body>
         <div class="background_container">
@@ -33,15 +34,15 @@
         			<ul class="features">
         				<li>
         					<img src="/img/multi_platform.png">
-        					<p>OnTrack™ is a cloud-based web application that helps you organize and keep track of your fertility medication.</p>
+        					<p>OnTrack™ is a cloud-based web application that helps your patients organize and keep track of their fertility medication.</p>
         				</li>
         				<li>
         					<img src="/img/med_management.png">
-        					<p>OnTrack™ keeps track of your medication supply and tells you when you need to get more based on your pharmacy’s hours.</p>
+        					<p>OnTrack™ keeps track of your patient's medication supply and tells them when they need to get more based on their pharmacy's hours.</p>
         				</li>
         				<li>
         					<img src="/img/checklist.png">
-        					<p>OnTrack™ is your personal fertility medication assistant.</p>
+        					<p>OnTrack™ is your patient's personal fertility medication assistant.</p>
         				</li>
         			</ul>
         		</div>
@@ -49,8 +50,7 @@
         </div>
         <div class="background_container foot_back">
         	<div class="holder bottom_call_to_action">
-        		<h2 class="tagline">Complete control of your fertility medication.</h2>
-        		<div class="button center" id="button2">Learn More</div>
+        		<div class="button center" id="button2">Contact Us</div>
         	</div>
         </div>
         <div class="background_container black_back foot_back">
@@ -58,5 +58,25 @@
         		<p>&copy; OnTrack LLC, 2018</p>
         	</div>
         </div>
+
+        <script>
+            !function(e,o,n){window.HSCW=o,window.HS=n,n.beacon=n.beacon||{};var t=n.beacon;t.userConfig={},t.readyQueue=[],t.config=function(e){this.userConfig=e},t.ready=function(e){this.readyQueue.push(e)},o.config={docs:{enabled:!1,baseUrl:""},contact:{enabled:!0,formId:"de679da1-432f-11e8-8d65-0ee9bb0328ce"}};var r=e.getElementsByTagName("script")[0],c=e.createElement("script");c.type="text/javascript",c.async=!0,c.src="https://djtflbt20bdde.cloudfront.net/",r.parentNode.insertBefore(c,r)}(document,window.HSCW||{},window.HS||{});
+        </script>
+        <script>
+            HS.beacon.config({
+                color: '#613D79',
+                poweredBy: false,
+                modal: true,
+                showSubject: true,
+                showName: true,
+            });
+        </script>
+        <script>
+            $('.button').on('click', function(){
+                HS.beacon.ready(function() {
+                    this.open();
+                });
+            });
+        </script>
     </body>
 </html>
