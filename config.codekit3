@@ -12,9 +12,9 @@
 	"\/.gitignore": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/build\/.gitignore",
-		"oF": 0
+		"oF": 1
 		},
 	"\/build": {
 		"ft": 65536,
@@ -1280,7 +1280,7 @@
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "meme-facepalm",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 545766631
+	"lastBuiltDate": 545770331
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
